@@ -30,27 +30,36 @@
         
         <!-- End of landing page -->
         
-        <div id="page2" class="hidden">
-            <h1>This is question 1</h1>
-            <form action="/action_page.php">
-                <p>Please select your gender:</p>
-                <input type="radio" name="question1" value="Right answer"> Right<br>
-                <input type="radio" name="question1" value="Wrong answer"> Wrong<br>
-                <input type="radio" name="question1" value="Wrong answer"> Wrong<br>
-                <input type="radio" name="question1" value="Wrong answer"> Wrong<br>
-
+        <div id="questionPage" class="hidden">
+            <h1 id="question">This is question 1</h1>
+            <form>
+                <button id="optionOne">Button 1</button>
+                <button id="optionTwo">Button 2</button>
+                <button id="optionThree">Button 3</button>
+                <button id="optionFour">Button 4</button>
             </form>
-            <button>Submit</button>
-            <div>
-                <p>Correct or Incorrect spot</p>
+            <div class="answerSpot">
+                <p id="answer">Correct or Incorrect spot</p>
             </div>
         </div>
 
-        <!-- End of second page -->
+        <!-- End of quiz page -->
+        
+        <div id="resultsPage" class="hidden">
+            <h1>This is question 1</h1>
+            <form>
+                This is the form for their name
+            </form>
+            <button id="submitBtn">Submit</button>
+        </div>
+        
+        <!-- End of results page -->
 
     </div>
 
+    <script src="assets/questions.js"></script>
     <script src="assets/script.js"></script>
+    
 </body>
 
 </html>
