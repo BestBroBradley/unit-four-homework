@@ -10,6 +10,7 @@ var answerEl = document.getElementById("answer")
 
 var timeRemaining = 60;
 
+var answer;
 
 counter.textContent = (`Time Remaining: ${timeRemaining} seconds`)
 
@@ -27,17 +28,23 @@ function startCountdown() {
     }, 100);
 }
 
+var i = 0
+
+function replaceQuestion() {
+    question.textContent = (questions[i].title)
+    optionOne.textContent = (questions[i].choices[0])
+    optionTwo.textContent = (questions[i].choices[1])
+    optionThree.textContent = (questions[i].choices[2])
+    optionFour.textContent = (questions[i].choices[3])
+    // answer = (questions[i].answer)
+    // i++
+}
 
 startBtn.addEventListener("click", function (event) {
     event.preventDefault();
     event.stopPropagation();
     landingPage.setAttribute("class", "hidden")
-    question.textContent = (questions[0].title)
-    optionOne.textContent = (questions[0].choices[0])
-    optionTwo.textContent = (questions[0].choices[1])
-    optionThree.textContent = (questions[0].choices[2])
-    optionFour.textContent = (questions[0].choices[3])
-    var answer = (questions[0].answer[0])
+    replaceQuestion();
     questionPage.setAttribute("class", "show")
     startCountdown();
     
@@ -46,36 +53,57 @@ startBtn.addEventListener("click", function (event) {
 optionOne.addEventListener("click", function(event) {
     event.preventDefault();
     event.stopPropagation();
-    var userChoice = (questions[0].choices[0])
-    
-    if (userChoice.String == answer.String) {
+    var userChoice = (questions[i].choices[0])
+    answer = (questions[i].answer)
+    console.log("userChoice:" + userChoice)
+    console.log("compChoice:" + answer)
+    if (userChoice === answer) {
         answerEl.textContent=("Correct!")
-    } else {answerEl.textContent=("Incorrect")}
-
-    question.textContent = (questions[1].title)
-    optionOne.textContent = (questions[1].choices[0])
-    optionTwo.textContent = (questions[1].choices[1])
-    optionThree.textContent = (questions[1].choices[2])
-    optionFour.textContent = (questions[1].choices[3])
-
+        console.log("correct")
+    } else {answerEl.textContent=("Incorrect")
+console.log("incorrect")}
+i++
+    replaceQuestion();
 })
 
-optionOne.addEventListener("click", function(event) {
+optionTwo.addEventListener("click", function(event) {
     event.preventDefault();
     event.stopPropagation();
-    var userChoice = (questions[0].choices[0])
+    var userChoice = (questions[i].choices[1])
     
-    if (userChoice.String == answer.String) {
+    if (userChoice === answer) {
         answerEl.textContent=("Correct!")
-    } else {answerEl.textContent=("Incorrect")}
-
-    question.textContent = (questions[1].title)
-    optionOne.textContent = (questions[1].choices[0])
-    optionTwo.textContent = (questions[1].choices[1])
-    optionThree.textContent = (questions[1].choices[2])
-    optionFour.textContent = (questions[1].choices[3])
-
+        console.log("correct")
+    } else {answerEl.textContent=("Incorrect")
+console.log("incorrect")}
+i++
+    replaceQuestion();
 })
 
+optionThree.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var userChoice = (questions[i].choices[2])
+    
+    if (userChoice === answer) {
+        answerEl.textContent=("Correct!")
+        console.log("correct")
+    } else {answerEl.textContent=("Incorrect")
+console.log("incorrect")}
+i++
+    replaceQuestion();
+})
 
-
+optionFour.addEventListener("click", function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    var userChoice = (questions[i].choices[3])
+    
+    if (userChoice === answer) {
+        answerEl.textContent=("Correct!")
+        console.log("correct")
+    } else {answerEl.textContent=("Incorrect")
+console.log("incorrect")}
+i++
+    replaceQuestion();
+})
