@@ -9,6 +9,7 @@ var optionFour = document.getElementById("optionFour")
 var answerEl = document.getElementById("answer")
 var judgeText = document.getElementById("judgeText")
 var initialsInp = document.getElementById("initials")
+var scoreList = document.getElementById("scoreList")
 
 var timeRemaining = 60;
 

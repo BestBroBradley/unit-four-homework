@@ -8,7 +8,7 @@
     right: 10%;
 }
 
-#mainDiv {
+.mainDiv {
     position: fixed;
     top: 50%;
     left: 50%;
