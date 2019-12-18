@@ -1,53 +1,53 @@
 var questions = [
     {
-        title: "Barf:",
-        choices: ["Now", "Right now", "How about now", "for sure"],
-        answer: "Now"
+        title: "What does CSS stand for?",
+        choices: ["Crying Shame, Sarah!", "Cascading Style Sheet", "Cardigan Shop Surveyor", "Cascading Style Surface"],
+        answer: "Cascading Style Sheet"
     },
     {
-        title: "Second question:",
-        choices: ["first", "second", "third", "fourth"],
-        answer: "third"
+        title: "Which of these is not an HTML element?",
+        choices: ["img", "p", "h1", "var"],
+        answer: "var"
     },
     {
-        title: "3:",
-        choices: ["3.1", "3.2", "3.3", "3.4"],
-        answer: "3.3"
+        title: "jQuery is an addendum to which programming language?",
+        choices: ["Bootstrap", "HTML", "CSS", "JavaScript"],
+        answer: "JavaScript"
     },
     {
-        title: "4:",
-        choices: ["4.1", "4.2", "4.3", "4.4"],
-        answer: "4.1"
+        title: "In HTML, what is the indicator for an ID?",
+        choices: [".", "#", "$", "&"],
+        answer: "#"
     },
     {
-        title: "5:",
-        choices: ["5.1", "5.2", "5.3", "5.4"],
-        answer: "5.1"
+        title: "What does p stand for in the HTML <p> element?",
+        choices: ["paragraph", "pineapple", "partridge", "macadamia nut"],
+        answer: "paragraph"
     },
     {
-        title: "6:",
-        choices: ["5.1", "5.2", "5.3", "5.4"],
-        answer: "5.1"
+        title: "What do you call an HTML element inside another HTML element?",
+        choices: ["parent", "sibling", "child", "cousin"],
+        answer: "child"
     },
     {
-        title: "7:",
-        choices: ["5.1", "5.2", "5.3", "5.4"],
-        answer: "5.1"
+        title: "Which gets loaded last upon page deployment?",
+        choices: ["Javascript", "HTML", "CSS", "jQuery"],
+        answer: "JavaScript"
     },
     {
-        title: "8:",
-        choices: ["5.1", "5.2", "5.3", "5.4"],
-        answer: "5.1"
+        title: "What is the default CSS 'position' value?",
+        choices: ["absolute", "relative", "static", "fixed"],
+        answer: "static"
     },
     {
-        title: "9:",
-        choices: ["5.1", "5.2", "5.3", "5.4"],
-        answer: "5.1"
+        title: "What does HTML stand for?",
+        choices: ["Hyper Toddlers Make Lentils", "How Tall, My Lapels!", "Hypertext Markup Language", "Hog Tied Mashup Language"],
+        answer: "Hypertext Markup Language"
     },
     {
-        title: "10:",
-        choices: ["5.1", "5.2", "5.3", "5.4"],
-        answer: "5.1"
+        title: "Which animals make the best pets?",
+        choices: ["cats", "cats", "cats", "cats"],
+        answer: "cats"
     },
     
 ];
