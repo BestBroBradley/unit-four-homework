@@ -13,7 +13,7 @@
 
     <header>
         <div id="highScore">
-            <a>
+            <a href="highscores.html">
                 View High Scores
             </a>
         </div>
@@ -46,9 +46,11 @@
         <!-- End of quiz page -->
         
         <div id="resultsPage" class="hidden">
-            <h1>This is question 1</h1>
+            <h1 id="judgeText">Excellent work!</h1>
+            <p>Add your initials to get your name on the leaderboard.</p>
+            <p>Click on "View High Scores" to see the current leaderboard!</p>
             <form>
-                This is the form for their name
+                <input type = "text" id = "initials"/>
             </form>
             <button id="submitBtn">Submit</button>
         </div>
