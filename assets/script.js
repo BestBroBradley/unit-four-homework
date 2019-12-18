@@ -23,7 +23,7 @@ function startCountdown() {
         timeRemaining--;
         counter.textContent = (`Time Remaining: ${timeRemaining} seconds`);
 
-        if (timeRemaining === -1 || i === questions.length) {
+        if (timeRemaining <= -1 || i === questions.length) {
             clearInterval(timerInterval);
             if (i === questions.length) {
                 score = timeRemaining
@@ -96,6 +96,7 @@ optionTwo.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
+        timeRemaining -=15
     }
     i++
     replaceQuestion();
@@ -114,6 +115,7 @@ optionThree.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
+        timeRemaining -=15
     }
     i++
     replaceQuestion();
@@ -132,6 +134,7 @@ optionFour.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
+        timeRemaining -=15
     }
     i++
     replaceQuestion();

@@ -8,6 +8,13 @@
     right: 10%;
 }
 
+button {
+    /* margin: 100%; */
+    font-size: 16px;
+    padding: 5px 10px;
+
+}
+
 .mainDiv {
     position: fixed;
     top: 50%;
