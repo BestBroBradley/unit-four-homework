@@ -10,13 +10,16 @@ var answerEl = document.getElementById("answer")
 var judgeText = document.getElementById("judgeText")
 var initialsInp = document.getElementById("initials")
 var scoreList = document.getElementById("scoreList")
+var testUl = document.getElementById("test-ul")
 
 var timeRemaining = 60;
 
+var scoreArray
 var answer
 var score
 
 counter.textContent = (`Time Remaining: ${timeRemaining} seconds`)
+scoreArray = JSON.parse(localStorage.getItem("scores array")) || [];
 
 function startCountdown() {
     var timerInterval = setInterval(function () {
@@ -52,6 +55,15 @@ function replaceQuestion() {
     optionTwo.textContent = (questions[i].choices[1])
     optionThree.textContent = (questions[i].choices[2])
     optionFour.textContent = (questions[i].choices[3])
+}
+
+function loadScores() {
+    scoreArray = JSON.parse(localStorage.getItem("scores array"))
+    scoreArray.forEach(function(item) {
+        var newLi = document.createElement("li")
+        newLi.textContent = ((item.name) + " " + (item.score));
+        scoreList.appendChild(newLi)
+    })    
 }
 
 startBtn.addEventListener("click", function (event) {
@@ -143,9 +155,11 @@ optionFour.addEventListener("click", function (event) {
 submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     event.stopPropagation();
-    localStorage.setItem("initials", initialsInp.value);
-    localStorage.setItem("score", score)
+    var newScore = {
+        name: initialsInp.value ,
+        score: score
+    } 
+    scoreArray.push(newScore)
+    localStorage.setItem("scores array", JSON.stringify(scoreArray));
     initialsInp.value = "";
-
-}
-)
+})
