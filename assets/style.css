@@ -35,7 +35,7 @@ header {
     margin: 0;
 }
 
-#landingPage, #resultsPage, #questionPage {
+#landingPage, #resultsPage, #questionPage, #leaderBoard {
     background: gainsboro;
     border: 3px black solid;
     border-radius: 12px;
