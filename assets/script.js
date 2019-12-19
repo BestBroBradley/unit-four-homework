@@ -11,7 +11,8 @@ var judgeText = document.getElementById("judgeText")
 var initialsInp = document.getElementById("initials")
 var scoreList = document.getElementById("scoreList")
 var testUl = document.getElementById("test-ul")
-
+var link = document.getElementById("highScore")
+var clearBtn = document.getElementById("clearArray")
 var timeRemaining = 60;
 
 var scoreArray
@@ -31,8 +32,7 @@ function startCountdown() {
             if (i === questions.length) {
                 score = timeRemaining
                 judgeText.textContent = ("Excellent job!")
-                
-                
+
             } else {
                 score = 0
                 timeRemaining = 60;
@@ -58,12 +58,18 @@ function replaceQuestion() {
 }
 
 function loadScores() {
-    scoreArray = JSON.parse(localStorage.getItem("scores array"))
-    scoreArray.forEach(function(item) {
+    scoreArray = JSON.parse(localStorage.getItem("scores array")) || [];
+    scoreArray.sort(function (a, b) {
+        return b.score - a.score;
+    })
+    if (((scoreArray.length) - 1) >= 10) {
+        scoreArray.splice(10)
+    }
+    scoreArray.forEach(function (item) {
         var newLi = document.createElement("li")
         newLi.textContent = ((item.name) + " " + (item.score));
         scoreList.appendChild(newLi)
-    })    
+    })
 }
 
 startBtn.addEventListener("click", function (event) {
@@ -89,7 +95,7 @@ optionOne.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
-        timeRemaining -=15
+        timeRemaining -= 15
     }
     i++
     replaceQuestion();
@@ -108,7 +114,7 @@ optionTwo.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
-        timeRemaining -=15
+        timeRemaining -= 15
     }
     i++
     replaceQuestion();
@@ -127,7 +133,7 @@ optionThree.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
-        timeRemaining -=15
+        timeRemaining -= 15
     }
     i++
     replaceQuestion();
@@ -146,7 +152,7 @@ optionFour.addEventListener("click", function (event) {
     } else {
         answerEl.textContent = ("Incorrect")
         console.log("incorrect")
-        timeRemaining -=15
+        timeRemaining -= 15
     }
     i++
     replaceQuestion();
@@ -156,10 +162,11 @@ submitBtn.addEventListener("click", function (event) {
     event.preventDefault();
     event.stopPropagation();
     var newScore = {
-        name: initialsInp.value ,
+        name: initialsInp.value,
         score: score
-    } 
+    }
     scoreArray.push(newScore)
     localStorage.setItem("scores array", JSON.stringify(scoreArray));
     initialsInp.value = "";
+    console.log(scoreArray)
 })

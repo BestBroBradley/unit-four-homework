@@ -1,17 +1,45 @@
 #highScore {
+    font-size: 20px;
     position: fixed;
+    top: 22px;
     left: 10%;
 }
 
 #timeRemaining {
+    font-size: 20px;
     position: fixed;
+    top: 22px;
     right: 10%;
 }
 
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 button {
-    /* margin: 100%; */
+    background: aquamarine;
+    border: 3px black solid;
+    border-radius: 12px;
     font-size: 16px;
-    padding: 5px 10px;
+    font-weight: bold;
+    margin: 10px auto;
+    padding: 12px 0;
+    width: 250px
+
+}
+
+header {
+    border-bottom: 5px aquamarine solid;
+    background: gainsboro;
+    height: 50px;
+    margin: 0;
+}
+
+#landingPage, #resultsPage, #questionPage {
+    background: gainsboro;
+    border: 3px black solid;
+    border-radius: 12px;
+    padding: 20px;
 
 }
 
@@ -24,7 +52,28 @@ button {
 }
 
 .answerSpot {
+    margin-top: 5px;
     border-top: 5px solid grey;
+}
+
+#answer {
+    font-size: 20px;
+}
+
+#initials {
+    border: 2px black solid;
+    height: 50px;
+    margin: 0 0 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+p {
+    font-size: 17px;
+}
+
+ul {
+    list-style-type: none;
 }
 
 .hidden {
